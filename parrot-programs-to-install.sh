@@ -754,9 +754,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 #
 #####################################################################################################################
 
-wget -O- https://raw.githubusercontent.com/trabdlkarim/parrot-zsh-theme/main/install.sh
+wget https://raw.githubusercontent.com/trabdlkarim/parrot-zsh-theme/main/install.sh -O parrot-zsh-theme-install.sh
 
-sh -c install.sh
+sh -c parrot-zsh-theme-install.sh
 
 rm install.sh
 
