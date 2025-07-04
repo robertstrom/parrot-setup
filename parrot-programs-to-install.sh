@@ -132,7 +132,8 @@ cp -R /usr/share/windows-resources/mimikatz/ ~/transfers/
 # Copy Ghostpack-CompiledBinaries-master.zip to the ~/transfers directory
 wget https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/archive/refs/heads/master.zip -O ~/transfers/Ghostpack-CompiledBinaries-master.zip
 pushd ~/transfers
-unzip Ghostpack-CompiledBinaries-master.zip
+unzip -o
+Ghostpack-CompiledBinaries-master.zip
 popd
 
 
@@ -396,7 +397,7 @@ case "$arch" in
   x86_64|amd64)
     echo "Architecture: x86-64 (64-bit)"
     wget $rustscanlatestamd64
-    unzip x86_64-linux-rustscan.tar.gz.zip
+    unzip -o x86_64-linux-rustscan.tar.gz.zip
     tar -xzvf x86_64-linux-rustscan.tar.gz
     sudo mv ./rustscan /usr/bin
     rm -rf ./x86_64-linux-rustscan.tar.gz.zip
@@ -411,7 +412,7 @@ case "$arch" in
   aarch64)
     echo "Architecture: AArch64 (64-bit ARM)"
     wget $rustscanlatestaarch64
-    unzip aarch64-linux-rustscan.zip
+    unzip -o aarch64-linux-rustscan.zip
     sudo mv ./rustscan /usr/bin
     rm -rf ./aarch64-linux-rustscan.zip
     ;;
@@ -508,7 +509,7 @@ go install github.com/charmbracelet/glow@latest
 
 ## Autoenum
 wget https://github.com/Gr1mmie/autoenum/archive/refs/tags/v3.zip
-unzip v3.zip
+unzip -o v3.zip
 rm v3.zip
 
 ## Updog web server
@@ -550,10 +551,6 @@ go install github.com/tomnomnom/waybackurls@latest
 # https://github.com/charmbracelet/glow?tab=readme-ov-file
 go install github.com/charmbracelet/glow@latest
 
-## Autoenum
-wget https://github.com/Gr1mmie/autoenum/archive/refs/tags/v3.zip
-unzip v3.zip
-rm v3.zip
 
 ## Updog web server
 ## https://github.com/sc0tfree/updog
@@ -611,7 +608,7 @@ popd
 # Download the ConPtyShell for Windows and place it in the ~/transfers directory
 pushd ~/transfers
 wget https://github.com/antonioCoco/ConPtyShell/releases/download/1.5/ConPtyShell.zip
-unzip ConPtyShell.zip
+unzip -o ConPtyShell.zip
 curl https://raw.githubusercontent.com/antonioCoco/ConPtyShell/master/Invoke-ConPtyShell.ps1 -o Invoke-ConPtyShell.ps1
 unix2dos Invoke-ConPtyShell.ps1
 rm -rf ConPtyShell.zip
@@ -655,7 +652,7 @@ fi
 # sshfs rstrom@$qnap: ~/QNAPMyDocs -oStrictHostKeyChecking=accept-new
 # pushd '/home/rstrom/QNAPMyDocs/My Documents/IRTools/Sysinternals'
 wget https://download.sysinternals.com/files/SysinternalsSuite.zip
-unzip SysinternalsSuite.zip -d ~/transfers/Sysinternals/
+unzip -o SysinternalsSuite.zip -d ~/transfers/Sysinternals/
 rm -rf SysinternalsSuite.zip
 
 ## Download prebuilt Docker images from Dropbox
