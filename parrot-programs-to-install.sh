@@ -671,7 +671,7 @@ case "$arch" in
     ## Ubuntu 20.04 Docker Image
     wget "https://www.dropbox.com/scl/fi/40xttbut5zdgyu03kkuht/ubuntu2004_docker_container.tar.gz?rlkey=e3u3pqyg148qqie4og8haul25&st=9l25pzwm&dl=1" -O ubuntu2004_docker_container.tar.gz
     gzip -d ubuntu2004_docker_container.tar.gz
-    for i in $(ls ./*tar); do sg docker -c "docker load --input  $i"; done
+      for i in $(ls ./*tar); do podman load --input  $i; done
     rm -rf ubuntu*.tar
     ;;
   *)
