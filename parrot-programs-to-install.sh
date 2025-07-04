@@ -704,6 +704,9 @@ ln -s $(which fdfind) ~/.local/bin/fd
 # https://www.rust-lang.org/tools/install
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# Source Rust env
+. "$HOME/.cargo/env" 
+
 # Install eza
 # https://github.com/eza-community/eza/blob/main/INSTALL.md
 cargo install eza
