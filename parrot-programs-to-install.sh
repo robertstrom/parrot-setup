@@ -754,14 +754,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 #
 #####################################################################################################################
 
-#
+# Install the parrot zsh theme
 mkdir -p /home/rstrom/.oh-my-zsh/custom/themes
 
-wget https://raw.githubusercontent.com/trabdlkarim/parrot-zsh-theme/main/install.sh -O parrot-zsh-theme-install.sh
-
-sh -c parrot-zsh-theme-install.sh
-
-rm parrot-zsh-theme-install.sh
+wget https://raw.githubusercontent.com/trabdlkarim/parrot-zsh-theme/refs/heads/main/parrot.zsh-theme -O ~/.oh-my-zsh/custom/themes/parrot.zsh-theme
 
 
 # Change zsh theme to agnoster
