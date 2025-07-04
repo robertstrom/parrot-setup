@@ -829,6 +829,9 @@ popd
 # Running apt autoremove
 sudo apt autoremove --purge -y
 
+# Adding the clear to hopefully fix a somewhat garbled screen after running the autoremove (the password prompt is shifted to the middle of the screen)
+clear
+
 chsh -s $(which zsh)
 
 
