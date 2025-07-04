@@ -193,7 +193,7 @@ arch=$(uname -m)
 
 case "$arch" in
   x86_64|amd64)
-    sudo DEBIAN_FRONTEND=noninteractive --force-confdef --force-confold apt install -yq shellcheck libimage-exiftool-perl pv terminator copyq xclip dolphin krusader kdiff3 krename kompare xxdiff krename kde-spectacle \
+    sudo DEBIAN_FRONTEND='noninteractive' -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' apt install -yq shellcheck libimage-exiftool-perl pv terminator copyq xclip dolphin krusader kdiff3 krename kompare xxdiff krename kde-spectacle \
     flameshot html2text csvkit remmina gridsite-clients shellter sipcalc fd-find dnsrecon zsh \
     xsltproc rinetd torbrowser-launcher httptunnel kerberoast tesseract-ocr ncdu grepcidr speedtest-cli sshuttle mpack filezilla lolcat snmp tnscmd10g \
     ripgrep bat dcfldd redis-tools name-that-hash jq keepassxc okular exfat-fuse exfatprogs kate xsel pandoc poppler-utils ffmpeg \
