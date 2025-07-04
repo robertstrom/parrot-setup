@@ -307,6 +307,8 @@ popd
 
 # Download and install VS Code
 # Used to be able to install VS Code via apt install code-oss but that package does not appear to be available in the repo anymore
+# Eliminating the prompt to add the vscode repository 
+sudo echo "code code/add-microsoft-repo boolean true" | sudo debconf-set-selections
 pushd ~/Downloads
 wget -O vscode-latest-x64.deb https://update.code.visualstudio.com/latest/linux-deb-x64/stable
 sudo dpkg -i vscode-latest-x64.deb
