@@ -707,7 +707,7 @@ ln -s $(which fdfind) ~/.local/bin/fd
 
 # Install Rust
 # https://www.rust-lang.org/tools/install
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
 
 # Source Rust env
 . "$HOME/.cargo/env" 
