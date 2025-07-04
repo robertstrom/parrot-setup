@@ -153,13 +153,13 @@ alias RestartResolvd="sudo systemctl restart systemd-resolved"
 alias GetDNSResolverInfo="sudo resolvectl"
 
 # Docker Aliases
-alias docker-start-webdav='docker run -p 80:80 -v "${PWD}":/srv/data/share rstrom/webdav'
-alias docker-stop-webdav='docker stop $(sudo docker ps -q --filter ancestor=rstrom/webdav)'
-alias docker-start-ubuntu2004='docker run -it ubuntu2004'
-alias docker-start-ubuntu1804='docker run -it ubuntu1804'
-alias docker-start-ubuntu1604='docker run -it ubuntu1604'
-alias docker-start-ubuntu1404='docker run -it ubuntu1404'
-alias docker-delete-dangling-images='docker rmi -f $(sudo docker images -f "dangling=true" -q)'
+alias podman-start-webdav='podman run -p 80:80 -v "${PWD}":/srv/data/share rstrom/webdav'
+alias podman-stop-webdav='podman stop $(sudo docker ps -q --filter ancestor=rstrom/webdav)'
+alias podman-start-ubuntu2004='podman run -it ubuntu2004'
+alias podman-start-ubuntu1804='podman run -it ubuntu1804'
+alias podman-start-ubuntu1604='podman run -it ubuntu1604'
+alias podman-start-ubuntu1404='podman run -it ubuntu1404'
+alias podman-delete-dangling-images='podman rmi -f $(sudo podman images -f "dangling=true" -q)'
 
 # Functions added - 4/10/2022 RStrom
 function grepEmailAddresses() {
