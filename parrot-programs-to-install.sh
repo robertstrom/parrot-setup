@@ -710,7 +710,10 @@ ln -s $(which fdfind) ~/.local/bin/fd
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- -y
 
 # Source Rust env
-. "$HOME/.cargo/env" 
+. "$HOME/.cargo/env"
+
+# Install cargo update
+cargo install cargo-update
 
 # Install eza
 # https://github.com/eza-community/eza/blob/main/INSTALL.md
