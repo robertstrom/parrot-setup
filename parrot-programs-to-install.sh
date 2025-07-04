@@ -826,6 +826,9 @@ rm JetBrainsMono.zip
 fc-cache -fv
 popd
 
+# Running apt autoremove
+sudo apt autoremove --purge -y
+
 chsh -s $(which zsh)
 
 
