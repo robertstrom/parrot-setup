@@ -194,7 +194,7 @@ arch=$(uname -m)
 case "$arch" in
   x86_64|amd64)
     sudo DEBIAN_FRONTEND=noninteractive apt install -yq shellcheck libimage-exiftool-perl pv terminator copyq xclip dolphin krusader kdiff3 krename kompare xxdiff krename kde-spectacle \
-    flameshot html2text csvkit remmina kali-wallpapers-all hollywood-activate kali-screensaver gridsite-clients shellter sipcalc fd-find dnsrecon \
+    flameshot html2text csvkit remmina kali-wallpapers-all hollywood-activate kali-screensaver gridsite-clients shellter sipcalc fd-find dnsrecon zsh \
     xsltproc rinetd torbrowser-launcher httptunnel kerberoast tesseract-ocr ncdu grepcidr speedtest-cli sshuttle mpack filezilla lolcat snmp tnscmd10g \
     ripgrep bat dcfldd redis-tools feroxbuster name-that-hash jq keepassxc okular exfat-fuse exfatprogs kate xsel pandoc poppler-utils ffmpeg \
     zbar-tools gnupg2 dc3dd rlwrap partitionmanager kali-undercover fastfetch hyfetch lolcat 7zip-standalone eza autorecon docker.io docker-cli \
@@ -737,6 +737,85 @@ rm ligolo-ng*
 rm README.md
 rm LICENSE
 
+popd
+
+####################################################################################################################
+#
+#                                                   Install ohmyzsh
+#
+#         You will need to the exit after ohmyzsh is installed and enters the zsh prompt to complete the script
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+#
+#
+#####################################################################################################################
+
+wget -O- https://raw.githubusercontent.com/trabdlkarim/parrot-zsh-theme/main/install.sh
+
+sh -c install.sh
+
+rm install.sh
+
+
+# Change zsh theme to agnoster
+sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="parrot"/' ~/.zshrc
+### Command to test differnet way to modify the ohmyzsh plugins
+## sed -i 's/plugins=(git)/plugins=(git\nautojump\ncolored-man-pages\ncolorize\ncopyfile\ncopypath\nfzf\neza)/'
+sed -i 's/plugins=(git)/plugins=(git colored-man-pages colorize copyfile copypath fzf eza)/' ~/.zshrc
+
+# Added for ohmyzsh fzf plugin
+echo "export FZF_BASE=~/.fzf" >> ~/.zshrc
+
+# Install fzf via github
+cd ~
+git clone --depth 1 https://github.com/junegunn/fzf.git
+pushd ~/fzf
+./install --all
+popd
+
+# Clone the tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# Nerd Fonts 
+
+mkdir -p ~/.local/share/fonts
+
+# Terminess Nerd Font
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Terminus.zip
+# Nerd Font Symbols
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/NerdFontsSymbolsOnly.zip
+# Pro Font
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ProFont.zip
+# M+ Font
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/MPlus.zip
+# Open Dyslexic Font
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/OpenDyslexic.zip
+# Monoid Font
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Monoid.zip
+# Meslo Font
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/Meslo.zip
+# JetBrains Mono Font
+wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
+
+pushd ~/.local/share/fonts
+unzip Terminus.zip
+rm Terminus.zip
+unzip NerdFontsSymbolsOnly.zip
+rm NerdFontsSymbolsOnly.zip
+unzip ProFont.zip
+rm ProFont.zip
+unzip MPlus.zip
+rm MPlus.zip
+unzip OpenDyslexic.zip
+rm OpenDyslexic.zip
+unzip Monoid.zip
+rm Monoid.zip
+unzip Meslo.zip
+rm Meslo.zip
+unzip JetBrainsMono.zip
+rm JetBrainsMono.zip 
+fc-cache -fv
 popd
 
 
