@@ -725,9 +725,17 @@ cargo install macchina
 pushd ~/Downloads
 ligolongagentlatestamd64=$(curl -s https://api.github.com/repos/nicocha30/ligolo-ng/releases/latest | jq -r ".assets[].browser_download_url" | grep linux_amd64 | grep agent )
 wget $ligolongagentlatestamd64 -O ligolo-ng_agent_linux_amd64.tar.gz
+tar xzvf ligolo-ng_agent_linux_amd64.tar.gz
+sudo mv agent /usr/bin/ligolo-ng-agent
 
 ligolongproxylatestamd64=$(curl -s https://api.github.com/repos/nicocha30/ligolo-ng/releases/latest | jq -r ".assets[].browser_download_url" | grep linux_amd64 | grep proxy )
 wget $ligolongproxylatestamd64 -O ligolo-ng_proxy_linux_amd64.tar.gz
+tar xzvf ligolo-ng_proxy_linux_amd64.tar.gz
+sudo mv proxy /usr/bin/ligolo-ng-proxy
+
+rm ligolo-ng*
+rm README.md
+rm LICENSE
 
 popd
 
