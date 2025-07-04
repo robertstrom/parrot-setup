@@ -142,6 +142,8 @@ alias paste="xclip -selection clipboard -o"
 ## 2024-05-28 - adding pbcopy and pbpaste aliases
 alias pbcopy='xsel --input --clipboard'
 alias pbpaste='xsel --output --clipboard'
+# 2025-07-04 - Add alias to update rust programs
+alias update-rust-apps='cargo install-update -a'
 
 
 # alias to quickly get to the PowerShell Empire Downloads directory
