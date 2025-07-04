@@ -687,9 +687,9 @@ popd
 # https://github.com/frostbits-security/SIET - original python2 version with documentation
 cd ~
 sudo git clone https://github.com/Sab0tag3d/SIETpy3.git /opt/sietpy3
-cd /opt/sietpy3
-cd /usr/bin
+pushd /usr/bin
 sudo ln -s /opt/sietpy3/siet.py siet
+popd
 
 # Installing uv
 # See - UV vs. PIP: Revolutionizing Python Package Management
