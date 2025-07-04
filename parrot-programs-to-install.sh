@@ -761,7 +761,7 @@ wget https://raw.githubusercontent.com/trabdlkarim/parrot-zsh-theme/main/install
 
 sh -c parrot-zsh-theme-install.sh
 
-rm install.sh
+rm parrot-zsh-theme-install.sh
 
 
 # Change zsh theme to agnoster
