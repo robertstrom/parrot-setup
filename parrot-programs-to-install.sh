@@ -52,7 +52,7 @@ scriptstarttime=$(date)
 ################################################################################################################################################
 #                                   Use the curl command below to start the script
 # 
-#  bash <(curl --silent https://raw.githubusercontent.com/robertstrom/parrot-setup/main/parrot-programs-to-install.sh) | tee parrot-install-script.log
+#  bash <(curl --silent -H "Cache-Control: no-cache, no-store" https://raw.githubusercontent.com/robertstrom/parrot-setup/main/parrot-programs-to-install.sh) | tee parrot-install-script.log
 #
 #
 ################################################################################################################################################
