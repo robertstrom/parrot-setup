@@ -801,21 +801,21 @@ wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/do
 wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
 
 pushd ~/.local/share/fonts
-unzip Terminus.zip
+unzip -o Terminus.zip
 rm Terminus.zip
-unzip NerdFontsSymbolsOnly.zip
+unzip -o NerdFontsSymbolsOnly.zip
 rm NerdFontsSymbolsOnly.zip
-unzip ProFont.zip
+unzip -o ProFont.zip
 rm ProFont.zip
-unzip MPlus.zip
+unzip -o MPlus.zip
 rm MPlus.zip
-unzip OpenDyslexic.zip
+unzip -o OpenDyslexic.zip
 rm OpenDyslexic.zip
-unzip Monoid.zip
+unzip -o Monoid.zip
 rm Monoid.zip
-unzip Meslo.zip
+unzip -o Meslo.zip
 rm Meslo.zip
-unzip JetBrainsMono.zip
+unzip -o JetBrainsMono.zip
 rm JetBrainsMono.zip 
 fc-cache -fv
 popd
