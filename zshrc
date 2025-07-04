@@ -513,4 +513,3 @@ jumpToEndofHistory() {
 # Created by `pipx` on 2025-07-04 00:52:18
 export PATH="$PATH:/home/rstrom/.local/bin"
 
-. "$HOME/.local/bin/env"
