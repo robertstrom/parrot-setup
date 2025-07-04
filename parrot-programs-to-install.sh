@@ -760,7 +760,7 @@ mkdir -p /home/rstrom/.oh-my-zsh/custom/themes
 wget https://raw.githubusercontent.com/trabdlkarim/parrot-zsh-theme/refs/heads/main/parrot.zsh-theme -O ~/.oh-my-zsh/custom/themes/parrot.zsh-theme
 
 
-# Change zsh theme to agnoster
+# Change zsh theme to parrot
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="parrot"/' ~/.zshrc
 ### Command to test differnet way to modify the ohmyzsh plugins
 ## sed -i 's/plugins=(git)/plugins=(git\nautojump\ncolored-man-pages\ncolorize\ncopyfile\ncopypath\nfzf\neza)/'
