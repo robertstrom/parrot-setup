@@ -60,6 +60,11 @@ scriptstarttime=$(date)
 ## This collection of information is designed to make it easier to get a Parrot instance to a standardized desired base configuration point
 ## so that it is fully functional with all expected software installed.
 
+# Increasing the sudo timeout
+sudo echo "" | sudo tee -a /etc/sudoers > /dev/null
+sudo echo "# Increasing sudo timeout for user rstrom" | sudo tee -a /etc/sudoers > /dev/null
+sudo echo "Defaults:rstrom timestamp_timeout=30" | sudo tee -a /etc/sudoers > /dev/null
+sudo echo "" | sudo tee -a /etc/sudoers > /dev/null
 
 # 2025-04-13 - Added prompt to set the hostname
 # This only works in a bash shell. This does not work at a command prompt in a zsh shell
@@ -69,6 +74,7 @@ sudo hostnamectl set-hostname $sethostname
 # Fixing the hostname in the /etc/hostname file - uses the variable set above when setting the hostname
 getprevhostname=$(grep 127.0.1.1 /etc/hosts | awk '{ print $2 }')
 sudo  sed -i "s/$getprevhostname/$sethostname/" /etc/hosts
+
 
 # 2024-11-06
 # create a ~/.screenrc file so that it is possible to scroll when using screen
