@@ -753,7 +753,7 @@ popd
 #
 #         You will need to the exit after ohmyzsh is installed and enters the zsh prompt to complete the script
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #
 #
