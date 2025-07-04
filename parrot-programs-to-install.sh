@@ -303,7 +303,7 @@ popd
 # Used to be able to install VS Code via apt install code-oss but that package does not appear to be available in the repo anymore
 pushd ~/Downloads
 wget -O vscode-latest-x64.deb https://update.code.visualstudio.com/latest/linux-deb-x64/stable
-sudo dkpg -i vscode-latest-x64.deb
+sudo dpkg -i vscode-latest-x64.deb
 popd
 
 # i3 program installs
