@@ -752,9 +752,7 @@ popd
 #                                                   Install ohmyzsh
 #
 #         You will need to the exit after ohmyzsh is installed and enters the zsh prompt to complete the script
-
-yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 #
 #
 #####################################################################################################################
@@ -824,6 +822,8 @@ unzip -o JetBrainsMono.zip
 rm JetBrainsMono.zip 
 fc-cache -fv
 popd
+
+chsh -s $(which zsh)
 
 
 # Pull down the custom Kali .zshrc file from GitHub
