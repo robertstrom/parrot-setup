@@ -201,7 +201,7 @@ arch=$(uname -m)
 case "$arch" in
   x86_64|amd64)
     sudo DEBIAN_FRONTEND='noninteractive' apt install -yq -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' shellcheck libimage-exiftool-perl pv terminator copyq xclip dolphin krusader kdiff3 krename kompare xxdiff krename kde-spectacle \
-    flameshot html2text csvkit remmina gridsite-clients shellter sipcalc fd-find dnsrecon \
+    flameshot html2text csvkit remmina gridsite-clients shellter sipcalc fd-find dnsrecon zsh \
     xsltproc rinetd torbrowser-launcher httptunnel kerberoast tesseract-ocr ncdu grepcidr speedtest-cli sshuttle mpack filezilla lolcat snmp tnscmd10g \
     ripgrep bat dcfldd redis-tools name-that-hash jq keepassxc okular exfat-fuse exfatprogs kate xsel pandoc poppler-utils ffmpeg \
     zbar-tools gnupg2 dc3dd rlwrap partitionmanager lolcat 7zip-standalone \
@@ -239,25 +239,25 @@ sudo systemctl enable ssh --now
 # https://netwerklabs.com/install-docker-on-parrotos/
 
 # Step 1: Remove any Incorrect Docker Repository
-sudo rm /etc/apt/sources.list.d/docker.list
-sudo apt update
+# sudo rm /etc/apt/sources.list.d/docker.list
+# sudo apt update
 
 # Step 2: Add Docker’s Official GPG Key
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo tee /etc/apt/keyrings/docker.asc > /dev/null
-sudo chmod a+r /etc/apt/keyrings/docker.asc
+# sudo install -m 0755 -d /etc/apt/keyrings
+# curl -fsSL https://download.docker.com/linux/debian/gpg | sudo tee /etc/apt/keyrings/docker.asc > /dev/null
+# sudo chmod a+r /etc/apt/keyrings/docker.asc
 
 # Step 3: Add the Correct Docker Repository
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian bookworm stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+# echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian bookworm stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # Step 4: Update and Install Docker
-sudo apt update
-sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+# sudo apt update
+# sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Step 5: Start and Enable Docker
-sudo systemctl start docker
-sudo systemctl enable docker
-sudo systemctl status docker
+# sudo systemctl start docker
+# sudo systemctl enable docker
+# sudo systemctl status docker
 
 ## Enable the xrdp service
 sudo systemctl enable xrdp --now
