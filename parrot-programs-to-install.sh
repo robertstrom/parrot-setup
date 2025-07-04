@@ -197,8 +197,8 @@ case "$arch" in
     flameshot html2text csvkit remmina gridsite-clients shellter sipcalc fd-find dnsrecon zsh \
     xsltproc rinetd torbrowser-launcher httptunnel kerberoast tesseract-ocr ncdu grepcidr speedtest-cli sshuttle mpack filezilla lolcat snmp tnscmd10g \
     ripgrep bat dcfldd redis-tools name-that-hash jq keepassxc okular exfat-fuse exfatprogs kate xsel pandoc poppler-utils ffmpeg \
-    zbar-tools gnupg2 dc3dd rlwrap partitionmanager lolcat 7zip-standalone autorecon \
-    breeze-icon-theme trufflehog python3-trufflehogregexes golang-go ligolo-ng sublist3r tcpspy xrdp mono-complete seclists pipx
+    zbar-tools gnupg2 dc3dd rlwrap partitionmanager lolcat 7zip-standalone \
+    breeze-icon-theme trufflehog python3-trufflehogregexes golang-go sublist3r tcpspy xrdp mono-complete seclists pipx
     ;;
   i?86)
     echo "Architecture: x86 (32-bit)"
