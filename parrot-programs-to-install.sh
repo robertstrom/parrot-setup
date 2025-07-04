@@ -708,6 +708,30 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # https://github.com/eza-community/eza/blob/main/INSTALL.md
 cargo install eza
 
+# Install Obsidian
+
+obsidianlatest=$(curl -s https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | jq -r ".assets[].browser_download_url" | grep deb)
+wget $obsidianlatest -O ~/Downloads/obsidian-latest.deb
+sudo dpkg -i ~/Downloads/obsidian-latest.deb
+rm -rf ~/Downloads/obsidian-latest.deb
+
+# Install coercer
+pipx install coercer
+
+# Install macchina (fastfetch alternative)
+cargo install macchina
+
+# Download ligolo-ng
+pushd ~/Downloads
+ligolongagentlatestamd64=$(curl -s https://api.github.com/repos/nicocha30/ligolo-ng/releases/latest | jq -r ".assets[].browser_download_url" | grep linux_amd64 | grep agent )
+wget $ligolongagentlatestamd64 -O ligolo-ng_agent_linux_amd64.tar.gz
+
+ligolongproxylatestamd64=$(curl -s https://api.github.com/repos/nicocha30/ligolo-ng/releases/latest | jq -r ".assets[].browser_download_url" | grep linux_amd64 | grep proxy )
+wget $ligolongproxylatestamd64 -O ligolo-ng_proxy_linux_amd64.tar.gz
+
+popd
+
+
 # Pull down the custom Kali .zshrc file from GitHub
 cp ~/.zshrc ~/.zshrc.sav
 wget https://raw.githubusercontent.com/robertstrom/parrot-setup/main/zshrc -O ~/.zshrc
