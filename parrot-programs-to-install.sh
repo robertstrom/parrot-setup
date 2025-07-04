@@ -118,7 +118,7 @@ mkdir ~/Docker-Images
 sudo groupadd fuse
 sudo usermod -a -G fuse rstrom
 
-sudo DEBIAN_FRONTEND=noninteractive --force-confdef --force-confold apt update && sudo DEBIAN_FRONTEND=noninteractive apt full-upgrade -yq
+sudo apt update && sudo DEBIAN_FRONTEND='noninteractive' apt -yq -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' full-upgrade
 
 # Copy mimikatz.exe to the ~/transfers directory
 cp -R /usr/share/windows-resources/mimikatz/ ~/transfers/
