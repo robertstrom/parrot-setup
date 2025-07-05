@@ -750,6 +750,13 @@ rm LICENSE
 
 popd
 
+# Uninstall the old version of NetExec that is pre-installed in Parrot
+sudo dpkg -r netexec
+
+# Install the current version of NetExec directly from GitHub
+pipx install git+https://github.com/Pennyw0rth/NetExec
+
+
 ####################################################################################################################
 #
 #                                                   Install ohmyzsh
