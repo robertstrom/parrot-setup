@@ -732,6 +732,10 @@ pipx install coercer
 # Install macchina (fastfetch alternative)
 cargo install macchina
 
+# Install broot directory navigation tool
+# https://dystroy.org/broot/
+cargo install --locked --features clipboard broot
+
 # Download ligolo-ng
 pushd ~/Downloads
 ligolongagentlatestamd64=$(curl -s https://api.github.com/repos/nicocha30/ligolo-ng/releases/latest | jq -r ".assets[].browser_download_url" | grep linux_amd64 | grep agent )
